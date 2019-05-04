@@ -15,6 +15,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import com.coll.model.Blog;
 import com.coll.model.BlogComment;
+import com.coll.model.Job;
 import com.coll.model.UserRole;
 
 
@@ -54,6 +55,7 @@ public class DBConfig
         factory.addAnnotatedClass(Blog.class);
         factory.addAnnotatedClass(BlogComment.class);
         factory.addAnnotatedClass(UserRole.class);
+        factory.addAnnotatedClass(Job.class);
         
         
        
