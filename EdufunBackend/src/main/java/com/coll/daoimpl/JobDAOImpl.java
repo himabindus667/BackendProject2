@@ -39,7 +39,7 @@ public class JobDAOImpl implements JobDAO
 	}
 
 	@Override
-	public List<Job> showJobs(Job job) 
+	public List<Job> showJobs() 
 	{
 		
 		Session session=sessionFactory.openSession();

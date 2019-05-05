@@ -2,7 +2,10 @@ package com.coll.test;
 
 import static org.junit.Assert.*;
 
+import java.util.List;
+
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -11,6 +14,7 @@ import com.coll.model.Job;
 
 public class JobDAOTest
 {
+	
 	static JobDAO jobDAO;
 	
 	@BeforeClass
@@ -22,7 +26,9 @@ public class JobDAOTest
 		jobDAO=(JobDAO)context.getBean("jobDAO");
 		
 	}
-	
+
+
+	@Ignore
 	@Test
 	public void addJobTest()
 	{
@@ -36,6 +42,27 @@ public class JobDAOTest
 		job.setLastDatetoApply(new java.util.Date(2019, 05, 30));
 		
 		assertTrue("Problem in adding the job",jobDAO.addJob(job));
+	}
+	@Ignore
+	@Test
+	public void showJobTest()
+	{
+	
+		List<Job> jobList=jobDAO.showJobs();
+		assertTrue("Problem in Listing the Job",jobList.size()>0);
+		
+		for(Job job:jobList)
+		{
+			System.out.println(job.getDesignation()+"::");
+			System.out.println(job.getJobDesc()+"::");
+			System.out.println(job.getCompanyName()+"::");
+			System.out.println(job.getLastDatetoApply()+"");
+					
+			
+			
+			
+		}
+	
 	}
 
 }
